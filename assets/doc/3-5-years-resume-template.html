@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3-5年经验简历模板（对齐指南）</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#eef1f6;font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;color:#1a1a1a}
+/* ---------- 工具栏 ---------- */
+.toolbar{position:sticky;top:0;z-index:99;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.08);padding:10px 18px}
+.tb-row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.tb-row+.tb-row{margin-top:8px}
+.brand{font-weight:700;color:#1f3a5f;font-size:14px}
+.hint{font-size:12px;color:#888}
+.grp{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.grp label{font-size:12px;color:#555;margin-right:2px}
+button{cursor:pointer;border:1px solid #cfd8e3;background:#fff;color:#1f3a5f;padding:6px 12px;border-radius:6px;font-size:12.5px;font-family:inherit;transition:all .15s}
+button:hover{background:#f2f6fb}
+button.on{background:#1f3a5f;color:#fff;border-color:#1f3a5f}
+select{padding:5px 8px;border:1px solid #cfd8e3;border-radius:6px;font-size:12.5px;font-family:inherit;color:#1f3a5f;background:#fff}
+
+/* ---------- 舞台 ---------- */
+#stage{display:flex;justify-content:center;padding:22px 12px 60px}
+.resume{width:210mm;min-height:297mm;background:#fff;box-shadow:0 4px 24px rgba(0,0,0,.12);position:relative;overflow:hidden}
+[contenteditable]:focus{outline:2px dashed #9dbbdd;outline-offset:2px}
+
+/* ---------- 通用排版（收紧密度） ---------- */
+h1{font-size:24px;font-weight:700;letter-spacing:2px}
+h2{font-size:13px;font-weight:700}
+.sec{margin-top:10px}
+.sec+.sec{margin-top:9px}
+.points{margin-top:4px}
+.point{font-size:12px;line-height:1.65;color:#222;padding-left:14px;position:relative;margin-bottom:1px}
+.point:before{content:"";position:absolute;left:3px;top:8px;width:4px;height:4px;border-radius:50%;background:#7d97b8}
+.lab{font-weight:700}
+.muted{color:#777}
+
+/* 占位提示（未填写时淡显） */
+[contenteditable][data-ph]:empty:before{content:attr(data-ph);color:#b5bcc7;font-style:italic}
+
+/* ---------- 经典单栏（ATS友好，默认·推荐） ---------- */
+.tpl-classic{padding:28px 38px}
+.tpl-classic .head{text-align:center;border-bottom:2px solid #1f3a5f;padding-bottom:9px}
+.tpl-classic .contact{font-size:11.5px;color:#555;margin-top:5px;line-height:1.55}
+.tpl-classic .target{font-size:12.5px;font-weight:700;color:#1f3a5f;margin-top:4px}
+.tpl-classic h2{color:#1f3a5f;border-bottom:1px solid #c9d6e6;padding-bottom:2px;margin-top:10px}
+.tpl-classic .lab{color:#1f3a5f}
+.tpl-classic .exp-head,.tpl-classic .proj-head{display:flex;justify-content:space-between;gap:12px;margin-top:8px;align-items:baseline}
+.tpl-classic .exp-time{font-size:11.5px;color:#666;white-space:nowrap;font-weight:700}
+.tpl-classic .sub{font-size:11.5px;color:#666;margin-top:1px}
+.tpl-classic .summary{font-size:12px;line-height:1.7;color:#232323;margin-top:4px;text-align:justify}
+.tpl-classic .skill-row{font-size:12px;line-height:1.7;color:#222;margin-top:2px}
+.tpl-classic .skill-row .lab{margin-right:4px}
+.tpl-classic .edu-block{margin-top:10px}
+
+/* ---------- 科技蓝（双栏视觉版·谨慎用于网申） ---------- */
+.tpl-tech{display:flex;padding:0;gap:0}
+.tpl-tech .side{width:200px;flex-shrink:0;background:#1f3a5f;color:#eaf0f7;padding:24px 14px;box-sizing:border-box}
+.tpl-tech .side-head{padding-bottom:10px;margin-bottom:8px;border-bottom:1px solid #4a6a92}
+.tpl-tech .side h1{font-size:22px;color:#fff;letter-spacing:2px;line-height:1.3;margin:0;text-align:center}
+.tpl-tech .side .contact{font-size:10.5px;color:#b9cbe0;margin-top:8px;line-height:1.8;word-break:break-all}
+.tpl-tech .side h2{color:#fff;font-size:12px;margin-top:12px;border-bottom:1px solid #4a6a92;padding-bottom:2px;margin-bottom:4px}
+.tpl-tech .side .point{color:#dce7f3;font-size:10.5px;padding-left:0;margin-bottom:2px;line-height:1.55}
+.tpl-tech .side .point:before{display:none}
+.tpl-tech .side .lab{color:#9cc0e7}
+.tpl-tech .side .skill-row{color:#dce7f3;font-size:10.5px;line-height:1.6;margin-top:2px;word-break:break-all}
+.tpl-tech .side .exp-head{display:block;margin-top:4px}
+.tpl-tech .side .exp-head>div{font-size:10.5px;color:#dce7f3;line-height:1.5}
+.tpl-tech .side .exp-time{color:#9fb2cc;font-size:10px;margin-top:2px;font-weight:normal;display:block}
+.tpl-tech .side .exp-head .lab{color:#fff}
+.tpl-tech .main{flex:1;padding:24px 22px;min-width:0}
+.tpl-tech .main h2{color:#1f3a5f;border-left:4px solid #1f3a5f;padding-left:8px;margin-top:6px}
+.tpl-tech .target{font-size:12.5px;font-weight:700;color:#1f3a5f;margin-bottom:4px;margin-top:0}
+.tpl-tech .lab{color:#1f3a5f}
+.tpl-tech .summary{font-size:11.5px;line-height:1.65;margin-top:4px;text-align:justify}
+.tpl-tech .exp-head,.tpl-tech .proj-head,.tpl-tech .proj-meta{display:flex;justify-content:space-between;gap:12px;margin-top:8px;align-items:baseline}
+.tpl-tech .exp-time{font-size:11px;color:#666;white-space:nowrap;font-weight:700}
+.tpl-tech .sub{font-size:11px;color:#666;margin-top:1px}
+.tpl-tech .main .skill-row{font-size:11px;line-height:1.65;color:#222;margin-top:2px}
+.tpl-tech .proj-section{font-size:11px;line-height:1.6}
+.tpl-tech .main .point{font-size:11px;line-height:1.6}
+
+/* ---------- 简约极简 ---------- */
+.tpl-minimal{padding:36px 44px}
+.tpl-minimal h1{font-size:26px;font-weight:400;letter-spacing:5px}
+.tpl-minimal .head{border-bottom:1px solid #ddd;padding-bottom:10px}
+.tpl-minimal .contact{font-size:11.5px;color:#777;margin-top:6px;line-height:1.65}
+.tpl-minimal .target{font-size:12px;color:#444;margin-top:4px;letter-spacing:1px}
+.tpl-minimal h2{color:#888;font-weight:400;font-size:12px;letter-spacing:3px;border-bottom:1px solid #ececec;padding-bottom:3px;margin-top:10px}
+.tpl-minimal .lab{font-weight:700;color:#333}
+.tpl-minimal .exp-head,.tpl-minimal .proj-head{display:flex;justify-content:space-between;gap:12px;margin-top:8px;align-items:baseline}
+.tpl-minimal .exp-time{font-size:11.5px;color:#888;white-space:nowrap}
+.tpl-minimal .sub{font-size:11.5px;color:#888;margin-top:1px}
+.tpl-minimal .summary{font-size:12px;line-height:1.7;color:#333;margin-top:4px;text-align:justify}
+.tpl-minimal .skill-row{font-size:11.5px;line-height:1.7;color:#333;margin-top:2px}
+.tpl-minimal .point{font-size:11.5px;line-height:1.65}
+
+/* ---------- 编辑态专用元素（打印时全部隐藏） ---------- */
+.tier-badge{display:inline-block;font-size:10.5px;background:#e8eef6;color:#1f3a5f;padding:2px 7px;border-radius:10px;margin-left:8px;font-weight:400;letter-spacing:0}
+.edit-tip{font-weight:400;font-size:10.5px}
+
+/* 项目/四段结构 */
+.proj-block{margin-top:6px}
+.proj-block+.proj-block{margin-top:8px}
+.proj-block .proj-meta{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.proj-section{font-size:12px;line-height:1.7;color:#222;margin-top:2px}
+.proj-section .lab{color:#1f3a5f;margin-right:4px}
+
+/* 稳定性提示（非打印时显示在角落） */
+.stab-note{font-size:10px;color:#a33;border-top:1px dashed #e0c8c8;padding-top:5px;margin-top:8px}
+
+/* ---------- 打印样式：A4 尺寸 + 隐藏一切编辑态元素 ---------- */
+@page{size:A4;margin:14mm 18mm}
+@media print{
+ body{background:#fff}
+ .toolbar{display:none!important}
+ #stage{padding:0}
+ .resume{box-shadow:none;width:auto;min-height:auto}
+ [contenteditable]:focus{outline:none}
+ /* 打印时隐藏所有编辑辅助元素 */
+ .edit-tip,.tier-badge,.stab-note{display:none!important}
+ /* 强制所有 muted 提示文字也隐藏，避免泄漏进 PDF */
+ h2 .muted{display:none!important}
+ /* 科技蓝双栏打印适配：避免侧栏和主栏跨页断裂 */
+ .tpl-tech{display:flex!important}
+ .tpl-tech .side{-webkit-print-color-adjust:exact;print-color-adjust:exact;break-inside:avoid;page-break-inside:avoid}
+ .tpl-tech .main{break-inside:auto}
+ .tpl-tech .sec{break-inside:avoid-page;page-break-inside:avoid}
+ .tpl-tech .sec h2{break-after:avoid}
+ /* 强制A4尺寸 */
+ @page{size:A4;margin:14mm 18mm}
+}
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <div class="tb-row">
+    <div class="brand">3-5年经验简历模板 <span class="hint">· 对齐《3-5年经验简历制作指南》</span></div>
+    <div class="grp">
+      <label>档位：</label>
+      <select id="tierSel" title="按自身年限选档位，自动调整项目结构与篇幅权重">
+        <option value="low">下限档（3-4年·站稳脚跟）</option>
+        <option value="mid" selected>中位档（4-5年·独当一面）</option>
+        <option value="high">上限档（接近5年·准备跃迁）</option>
+      </select>
+      <label>版式：</label>
+      <button class="tplbtn on" data-tpl="classic">经典单栏<span class="hint">（ATS推荐）</span></button>
+      <button class="tplbtn" data-tpl="tech">科技蓝</button>
+      <button class="tplbtn" data-tpl="minimal">简约极简</button>
+    </div>
+  </div>
+  <div class="tb-row">
+    <div class="hint">① 点击任意文字即可编辑；②【】为待填占位符；③ 填写内容自动保存到本地；④ 投递前用「复制文本」做ATS自检</div>
+    <div class="grp">
+      <button onclick="downloadPdf()">下载 PDF</button>
+      <button onclick="downloadWord()">下载 Word</button>
+      <button onclick="copyText()">复制文本（ATS自检）</button>
+      <button onclick="clearSave()" title="清空本地自动保存的内容">重置</button>
+    </div>
+  </div>
+</div>
+<div id="stage"><div id="resume" class="resume tpl-classic"></div></div>
+
+<script>
+/* ============================================================
+   档位配置：严格对齐《指南》参数
+============================================================ */
+const TIER = {
+  low: {
+    label: '下限档·3-4年·站稳脚跟',
+    maxPages: '1页封顶',
+    projStruct: '三段（背景→角色→产出）',
+    skillStruct: '金字塔（基础扎实）',
+    stabLine: '3年内跳槽≤2次；超过需准备强理由解释',
+    projFields: ['背景','角色','产出'],
+    eduFirst: true,
+    exp1bullets: 4,
+    exp2bullets: 3,
+    exp3bullets: 1,
+    projCount: 1,
+    noMastery: true,
+    summaryTpl: '【3年】嵌入式Linux应用开发经验，熟练掌握C/C++、多线程与网络编程。参与/独立负责过【具体模块类型】的设计与开发，熟悉【协议/平台】，技术上手快，能快速熟悉新平台与协议，稳定可靠可独立交付。'
+  },
+  mid: {
+    label: '中位档·4-5年·独当一面',
+    maxPages: '1-1.5页',
+    projStruct: '四段（背景+硬约束→职责→难点+方案→量化结果）',
+    skillStruct: '过渡结构（金字塔+1-2方向深度）',
+    stabLine: '5年内跳槽≤3次；每份工作至少1年',
+    projFields: ['背景','职责','难点','结果'],
+    eduFirst: false,
+    exp1bullets: 4,
+    exp2bullets: 3,
+    exp3bullets: 2,
+    projCount: 2,
+    noMastery: true,
+    summaryTpl: '【4-5年】嵌入式Linux应用开发经验，深耕网络通信/设备接入方向。独立负责过【核心子系统/产品模块】设计与交付，熟练运用【协议栈/并发模型/平台】，曾【量化成果，如降低CPU占用XX%/接入设备XX台/响应时延优化到XX ms】，具备跨团队协同经验。'
+  },
+  high: {
+    label: '上限档·接近5年·准备跃迁',
+    maxPages: '最多2页',
+    projStruct: '四段+协同架构（突出架构决策与影响力）',
+    skillStruct: 'T型（1-2纵深+周边广度）',
+    stabLine: '5年内跳槽≤3次；职业主轴清晰、呈阶梯式上升',
+    projFields: ['背景','职责','难点','结果'],
+    eduFirst: false,
+    exp1bullets: 5,
+    exp2bullets: 4,
+    exp3bullets: 3,
+    projCount: 2,
+    noMastery: false,
+    summaryTpl: '【5年】嵌入式Linux应用开发经验，擅长【核心方向，如高并发网络通信/边缘设备接入】。从0到1搭建过【系统/组件】，主导【关键架构决策/跨团队协同】，【量化成果】。具备架构思维，可带领新人完成模块交付，正在向【资深/技术组长】方向发展。'
+  }
+};
+
+/* ============================================================
+   内容快照：切档位/版式时保存并回填用户输入
+   每个可编辑字段有稳定的 data-key，跨档位复用
+============================================================ */
+function snapshot(){
+  const out = {};
+  document.querySelectorAll('#resume [contenteditable="true"]').forEach(el=>{
+    const k = el.getAttribute('data-key');
+    if(k && el.innerHTML.trim()) out[k] = el.innerHTML;
+  });
+  return out;
+}
+function applySnapshot(snap){
+  document.querySelectorAll('#resume [contenteditable="true"]').forEach(el=>{
+    const k = el.getAttribute('data-key');
+    if(k && snap[k] !== undefined) el.innerHTML = snap[k];
+  });
+}
+
+/* ============================================================
+   简历内容数据模型（嵌入式Linux网络应用开发方向）
+   —— 每个可编辑字段带 data-key，用于快照回填与自动保存
+============================================================ */
+let keyCounter = 0;
+// 语义化 key 生成：按位置命名，跨档位稳定（例如 exp1_pt0, proj1_bg）
+const K = (prefix)=>`${prefix}_${keyCounter++}`;
+
+function editable(tag, key, attrs, inner){
+  const attrStr = Object.entries(attrs||{}).map(([k,v])=>` ${k}="${v}"`).join('');
+  return `<${tag} contenteditable="true" data-key="${key}"${attrStr}>${inner}</${tag}>`;
+}
+
+function buildResume(tier){
+  keyCounter = 0;
+  const cfg = TIER[tier];
+
+  // bullets: 用语义化 key 前缀，避免跨档位错位
+  const bullets = (keyPrefix, n, arr) => arr.slice(0,n).map((t,i)=>`<div class="point" contenteditable="true" data-key="${keyPrefix}_pt${i}">${t}</div>`).join('');
+
+  // 工作经历要点
+  const exp1Points = [
+    '<span class="lab">【量化成果开头】</span>主导/独立负责【具体模块】，通过【技术方案】将【指标，如时延/CPU/内存】优化【XX%】，支撑【业务规模，如XX万台设备在线】',
+    '基于epoll/多线程实现【网络模块】，处理并发连接【XX万】，端到端时延稳定在【XX ms】以内',
+    '设计并落地【MQTT/私有TCP协议】接入层，解决【问题，如弱网重连/丢包重传】，设备上线成功率提升至【XX%】',
+    '协同产品/测试/硬件团队完成【版本/项目】迭代【X次】，交付周期缩短【XX%】，线上缺陷率低于【XX%】',
+    '指导/带教【X名】新人熟悉代码库与开发流程，输出【技术文档/wiki】【X篇】'
+  ];
+  const exp2Points = [
+    '<span class="lab">独立负责</span>【模块名】开发与维护，完成【X个】版本迭代，支撑【业务规模】',
+    '基于socket/多线程编程实现【功能】，内存占用控制在【XX KB/MB】以内',
+    '使用GDB/tcpdump/Wireshark定位并解决【稳定性/性能问题】，MTBF提升至【XX小时】',
+    '参与【从0到1/重构】项目，负责【子模块】设计评审与代码交付'
+  ];
+  const exp3Points = [
+    '参与/协助【项目类型】开发，熟悉嵌入式Linux下C/C++开发流程与交叉编译环境'
+  ];
+
+  // 项目模块
+  const projSection = (key, label, ph)=>`<div class="proj-section"><span class="lab">${label}：</span><span contenteditable="true" data-key="${key}" data-ph="${ph}">【${ph}】</span></div>`;
+  const buildProject = (idx, cfg)=>{
+    const pfx = `proj${idx}`;
+    let html = `<div class="proj-block">
+      <div class="proj-meta">
+        <div>${editable('span',`${pfx}_name`,{class:'lab'},'【项目'+idx+'名称】')}<span class="muted"> · <span contenteditable="true" data-key="${pfx}_brief">【项目一句话简介】</span></span></div>
+        <div class="exp-time" contenteditable="true" data-key="${pfx}_date">【YYYY.MM - YYYY.MM】</div>
+      </div>`;
+    if(cfg.projStruct.includes('三段')){
+      html += projSection(`${pfx}_bg`,'背景','项目是什么，要解决什么问题（含资源/硬件约束）');
+      html += projSection(`${pfx}_role`,'角色','你独立负责哪个模块，承担什么具体任务（不要写"参与"）');
+      html += projSection(`${pfx}_result`,'产出','完成了什么功能/通过了什么测试/性能数据提升到多少');
+    } else {
+      html += projSection(`${pfx}_bg`,'背景','项目背景+硬约束（成本/功耗/实时性/资源受限条件）');
+      html += projSection(`${pfx}_role`,'职责','你的职责边界：主导/独立负责什么，参与了哪些关键决策');
+      html += projSection(`${pfx}_diff`,'难点','遇到的具体技术难题+方案对比（为什么选A不选B）');
+      html += projSection(`${pfx}_result`,'结果','量化结果：时延/内存/CPU/稳定性指标提升多少');
+    }
+    if(tier==='high'){
+      html += `<div class="proj-section"><span class="lab">协同/架构：</span><span contenteditable="true" data-key="${pfx}_collab" data-ph="跨部门协同、架构决策、对团队的影响力">【跨部门协同了几个团队/做了哪些架构决策/输出了哪些可复用组件】</span></div>`;
+    }
+    html += `</div>`;
+    return html;
+  };
+
+  // 技能栈（按档位分层，每档内部独立skill1-N编号，跨档位稳定）
+  let skillHtml = '';
+  if(tier==='low'){
+    skillHtml = `
+      <div class="skill-row"><span class="lab">基础层（扎实）：</span><span contenteditable="true" data-key="skill1">C/C++、数据结构与常用算法、Linux常用命令、操作系统原理（进程/线程/内存/IO）</span></div>
+      <div class="skill-row"><span class="lab">核心方向（熟练掌握）：</span><span contenteditable="true" data-key="skill2">socket网络编程、TCP/IP协议栈、多线程/多进程编程、I2C/SPI/UART/GPIO等常用硬件接口</span></div>
+      <div class="skill-row"><span class="lab">工具层（熟练）：</span><span contenteditable="true" data-key="skill3">Git、GDB、Makefile/CMake、tcpdump/Wireshark抓包分析</span></div>
+      <div class="skill-row"><span class="lab">加分项（了解/接触）：</span><span contenteditable="true" data-key="skill4">【某款ARM平台，如全志/瑞芯微/海思】、【某款RTOS，如FreeRTOS/RT-Thread】、设备树基础</span></div>`;
+  } else if(tier==='mid'){
+    skillHtml = `
+      <div class="skill-row"><span class="lab">编程语言与基础：</span><span contenteditable="true" data-key="skill1">熟练掌握C/C++，熟悉数据结构与算法、操作系统原理</span></div>
+      <div class="skill-row"><span class="lab">网络通信（深入理解）：</span><span contenteditable="true" data-key="skill2">socket编程、epoll多路复用、TCP/IP协议栈、MQTT/HTTP/私有TCP协议设计与调优</span></div>
+      <div class="skill-row"><span class="lab">系统编程（熟练掌握）：</span><span contenteditable="true" data-key="skill3">多进程/多线程、IPC通信、内存池、零拷贝、Linux系统调优</span></div>
+      <div class="skill-row"><span class="lab">平台与工具：</span><span contenteditable="true" data-key="skill4">【某款ARM平台】交叉编译、设备树、字符设备驱动基础；Git/GDB/CMake/tcpdump/Wireshark</span></div>
+      <div class="skill-row"><span class="lab">加分项：</span><span contenteditable="true" data-key="skill5">【内核裁剪/OTA升级/实时系统/边缘计算相关经验】</span></div>`;
+  } else {
+    skillHtml = `
+      <div class="skill-row"><span class="lab">纵深方向（精通/深入）：</span><span contenteditable="true" data-key="skill1">高并发网络编程、TCP/IP协议栈优化、【核心领域，如边缘网关接入/协议栈自研】，有架构设计经验</span></div>
+      <div class="skill-row"><span class="lab">系统与平台：</span><span contenteditable="true" data-key="skill2">Linux系统编程、内存/性能调优、设备树、驱动开发基础、【某ARM平台】深度适配经验</span></div>
+      <div class="skill-row"><span class="lab">工程能力：</span><span contenteditable="true" data-key="skill3">模块化设计、代码评审、CI/CD、技术文档输出；熟练使用Git/GDB/CMake/性能分析工具</span></div>
+      <div class="skill-row"><span class="lab">广度覆盖：</span><span contenteditable="true" data-key="skill4">【相关领域：如内核裁剪/RTOS/容器化/轻量AI推理】，可快速对接周边系统</span></div>
+      <div class="skill-row"><span class="lab">开源与分享：</span><span contenteditable="true" data-key="skill5">GitHub主页/技术博客【链接】，有【开源项目/技术文章】输出</span></div>`;
+  }
+
+  const eduBlock = `
+    <div class="edu-block sec">
+      <h2>教育背景</h2>
+      <div class="exp-head">
+        <div>${editable('span','edu_name',{class:'lab'},'【学校名称】')} · <span contenteditable="true" data-key="edu_major">【专业】</span> · <span contenteditable="true" data-key="edu_deg">【学历】</span></div>
+        <div class="exp-time" contenteditable="true" data-key="edu_time">【YYYY.MM - YYYY.MM】</div>
+      </div>
+    </div>`;
+
+  let projHtml = '';
+  for(let i=1;i<=cfg.projCount;i++){
+    projHtml += buildProject(i, cfg);
+  }
+
+  const stabNote = `<div class="stab-note" id="stabNote">⚠️ 稳定性红线：${cfg.stabLine}。时间线必须与离职证明、社保记录100%一致，背调不得矛盾。</div>`;
+
+  // 头部
+  let body = `
+    <div class="head">
+      <h1 contenteditable="true" data-key="name" data-ph="姓名">【你的姓名】</h1>
+      <div class="contact" contenteditable="true" data-key="contact" data-ph="电话 | 邮箱 | 城市 | GitHub链接">【电话】 | 【正式邮箱】 | 【城市】 | <span style="color:#1f3a5f">GitHub：【链接】</span></div>
+      <div class="target"><span contenteditable="true" data-key="target" data-ph="求职意向">求职意向：嵌入式Linux应用开发工程师（应用层/网络通信方向）</span><span class="tier-badge" id="tierBadge">${cfg.label} · ${cfg.maxPages}</span></div>
+    </div>
+
+    <div class="sec">
+      <h2>个人简介<span class="muted edit-tip"> · HR第3个阅读位，决定是否继续翻</span></h2>
+      <div class="summary" contenteditable="true" data-key="summary">${cfg.summaryTpl}</div>
+    </div>
+  `;
+
+  if(cfg.eduFirst) body += eduBlock;
+
+  body += `
+    <div class="sec">
+      <h2>工作经历</h2>
+      <div class="exp-head">
+        <div>${editable('span','c1',{class:'lab'},'【公司名称】')} · <span contenteditable="true" data-key="p1">【职位名称】</span></div>
+        <div class="exp-time" contenteditable="true" data-key="t1">【YYYY.MM - 至今】</div>
+      </div>
+      <div class="sub" contenteditable="true" data-key="s1" data-ph="一句话介绍公司业务/规模（可选）">【公司一句话简介，如：国内领先的XX领域物联网设备厂商】</div>
+      <div class="points">${bullets('exp1', cfg.exp1bullets, exp1Points)}</div>
+
+      <div class="exp-head">
+        <div>${editable('span','c2',{class:'lab'},'【公司名称】')} · <span contenteditable="true" data-key="p2">【职位名称】</span></div>
+        <div class="exp-time" contenteditable="true" data-key="t2">【YYYY.MM - YYYY.MM】</div>
+      </div>
+      <div class="points">${bullets('exp2', cfg.exp2bullets, exp2Points)}</div>
+  `;
+
+  if(cfg.exp3bullets>0){
+    body += `
+      <div class="exp-head">
+        <div>${editable('span','c3',{class:'lab'},'【公司名称】')} · <span contenteditable="true" data-key="p3">【职位名称】</span></div>
+        <div class="exp-time" contenteditable="true" data-key="t3">【YYYY.MM - YYYY.MM】</div>
+      </div>
+      <div class="points">${bullets('exp3', cfg.exp3bullets, exp3Points)}</div>
+    `;
+  }
+  body += `</div>`;
+
+  if(!cfg.eduFirst) body += eduBlock;
+
+  body += `
+    <div class="sec">
+      <h2>核心项目<span class="muted edit-tip"> · ${cfg.projStruct}</span></h2>
+      ${projHtml}
+    </div>
+
+    <div class="sec">
+      <h2>专业技能<span class="muted edit-tip"> · ${cfg.skillStruct}${cfg.noMastery?'（不写"精通"，避免深度拷问）':''}</span></h2>
+      ${skillHtml}
+    </div>
+
+    <div class="sec">
+      <h2>证书与荣誉</h2>
+      <div class="points">
+        <div class="point" contenteditable="true" data-key="cert" data-ph="相关证书，如CET-6/软考，无则删去本模块">【证书/奖项/荣誉，无关的不写】</div>
+      </div>
+    </div>
+
+    ${stabNote}
+  `;
+  return body;
+}
+
+/* ============================================================
+   渲染：先快照，再重绘，再回填
+============================================================ */
+let curTier = 'mid';
+let curTpl  = 'classic';
+const SAVE_KEY = 'resume35_autosave_v1';
+
+function render(preserveInput=true){
+  const snap = preserveInput ? snapshot() : {};
+  const el = document.getElementById('resume');
+  // 切换前先把上一轮的双栏结构还原为平铺，避免side/main残留干扰
+  flattenLayout(el);
+  el.className = 'resume tpl-' + curTpl;
+  el.innerHTML = buildResume(curTier);
+  // 科技蓝版式：把单栏DOM重排为双栏(side+main)
+  if(curTpl==='tech') buildTwoColLayout(el);
+  // 回填用户输入（相同key跨档位复用）
+  applySnapshot(snap);
+  // 恢复自动保存的内容（首次加载）
+  if(!preserveInput) restoreAutoSave();
+  // 绑定粘贴纯文本 + 自动保存
+  bindEditBehaviors();
+  // 高亮按钮
+  document.querySelectorAll('.tplbtn').forEach(b=>b.classList.toggle('on', b.dataset.tpl===curTpl));
+}
+
+/* ---------- 双栏版式构建：把单栏flat DOM拆分为 侧栏.side + 主栏.main ---------- */
+function buildTwoColLayout(root){
+  const side = document.createElement('div');
+  side.className = 'side';
+  const main = document.createElement('div');
+  main.className = 'main';
+
+  // 侧栏放：姓名、联系方式、专业技能、证书与荣誉、教育背景（基础信息区）
+  // 主栏放：求职意向、个人简介、工作经历、核心项目、稳定性提示
+  const head = root.querySelector('.head');
+  const h1 = head.querySelector('h1');
+  const contact = head.querySelector('.contact');
+  // 侧栏头部：姓名+联系方式
+  const sideHead = document.createElement('div');
+  sideHead.className = 'side-head';
+  if(h1) sideHead.appendChild(h1);
+  if(contact) sideHead.appendChild(contact);
+  side.appendChild(sideHead);
+
+  // 按标题识别模块
+  const secs = Array.from(root.querySelectorAll('.sec'));
+  const sideSections = [];
+  const mainSections = [];
+  secs.forEach(sec=>{
+    const title = sec.querySelector('h2');
+    const t = title ? title.innerText.replace(/\s*·.*$/,'').trim() : '';
+    if(t==='个人简介'){
+      // 个人简介放主栏顶部
+      mainSections.push(sec);
+    } else if(t==='专业技能' || t==='证书与荣誉' || t==='教育背景'){
+      sideSections.push(sec);
+    } else {
+      // 工作经历、核心项目 → 主栏
+      mainSections.push(sec);
+    }
+  });
+
+  // 清空head里剩余内容（target意向栏）放到主栏最前
+  const target = head.querySelector('.target');
+  if(target) main.appendChild(target);
+  // 把head本身移除（h1和contact已搬到side，target已搬到main）
+  head.remove();
+
+  // 组装侧栏
+  sideSections.forEach(s=>side.appendChild(s));
+  // 组装主栏
+  mainSections.forEach(s=>main.appendChild(s));
+
+  // 稳定性提示放主栏末尾
+  const stab = root.querySelector('.stab-note');
+  if(stab) main.appendChild(stab);
+
+  // 把简历内容替换为双栏
+  root.innerHTML = '';
+  root.appendChild(side);
+  root.appendChild(main);
+}
+
+/* ---------- 从双栏还原为平铺，以便下次重渲染不冲突 ---------- */
+function flattenLayout(root){
+  const side = root.querySelector('.side');
+  const main = root.querySelector('.main');
+  if(!side && !main) return;
+  const frag = document.createDocumentFragment();
+  // 先把 side 内容按顺序取出：side-head(h1+contact) → 其他sec
+  if(side){
+    const sideHead = side.querySelector('.side-head');
+    if(sideHead){
+      // 重建一个.head容器放h1+contact+target
+      const headDiv = document.createElement('div');
+      headDiv.className = 'head';
+      const h1 = sideHead.querySelector('h1');
+      const contact = sideHead.querySelector('.contact');
+      if(h1) headDiv.appendChild(h1);
+      if(contact) headDiv.appendChild(contact);
+      // target会从main里取
+      frag.appendChild(headDiv);
+    }
+    // side中剩余的sec（技能/证书/教育）按原顺序追加
+    Array.from(side.children).forEach(ch=>{
+      if(ch.classList.contains('side-head')) return;
+      frag.appendChild(ch);
+    });
+  }
+  if(main){
+    // main里依次：target（放回head）→ 其他sec → stab-note
+    const headDiv = frag.querySelector('.head') || (()=>{ const d=document.createElement('div'); d.className='head'; frag.insertBefore(d, frag.firstChild); return d; })();
+    Array.from(main.children).forEach(ch=>{
+      if(ch.classList.contains('target')){
+        headDiv.appendChild(ch);
+      } else {
+        frag.appendChild(ch);
+      }
+    });
+  }
+  root.innerHTML = '';
+  root.appendChild(frag);
+}
+
+/* ---------- 粘贴纯文本 ---------- */
+function bindEditBehaviors(){
+  document.querySelectorAll('#resume [contenteditable="true"]').forEach(el=>{
+    el.addEventListener('paste', e=>{
+      e.preventDefault();
+      const text = (e.clipboardData||window.clipboardData).getData('text/plain');
+      document.execCommand('insertText', false, text);
+    });
+    el.addEventListener('input', scheduleAutoSave);
+  });
+}
+
+/* ---------- 自动保存（防抖30秒 + 卸载时保存） ---------- */
+let saveTimer = null;
+function scheduleAutoSave(){
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(autoSave, 1500);
+}
+function autoSave(){
+  try{
+    const data = { tier: curTier, tpl: curTpl, content: snapshot() };
+    localStorage.setItem(SAVE_KEY, JSON.stringify(data));
+  }catch(e){}
+}
+function restoreAutoSave(){
+  try{
+    const raw = localStorage.getItem(SAVE_KEY);
+    if(!raw) return;
+    const data = JSON.parse(raw);
+    if(data.tier && TIER[data.tier]) curTier = data.tier;
+    if(data.tpl) curTpl = data.tpl;
+    document.getElementById('tierSel').value = curTier;
+    if(data.content) applySnapshot(data.content);
+  }catch(e){}
+}
+window.addEventListener('beforeunload', autoSave);
+
+/* ---------- 档位/版式切换（保留输入） ---------- */
+document.getElementById('tierSel').addEventListener('change', e=>{
+  curTier = e.target.value;
+  render(true);
+});
+document.querySelectorAll('.tplbtn').forEach(b=>{
+  b.addEventListener('click', ()=>{
+    curTpl = b.dataset.tpl;
+    render(true);
+  });
+});
+
+/* ---------- 下载 PDF ---------- */
+function downloadPdf(){
+  autoSave();
+  window.print();
+}
+
+/* ---------- 复制文本（临时剥离编辑提示后复制，不污染正文） ---------- */
+function copyText(){
+  const el = document.getElementById('resume');
+  // 临时隐藏所有编辑态元素，仅提取正式内容
+  const badges = el.querySelectorAll('.tier-badge, .stab-note');
+  const tips = el.querySelectorAll('.edit-tip');
+  badges.forEach(n=>n.style.display='none');
+  tips.forEach(n=>n.style.display='none');
+  const text = el.innerText;
+  badges.forEach(n=>n.style.display='');
+  tips.forEach(n=>n.style.display='');
+  navigator.clipboard.writeText(text).then(()=>{
+    alert('已复制到剪贴板。\n\n【ATS自检三步】粘贴到记事本/纯文本编辑器中检查：\n1. 文字是否完整、无乱码\n2. 顺序是否正确（姓名→意向→简介→经历→项目→教育→技能）\n3. 岗位关键词（socket/epoll/MQTT/多线程/驱动）是否自然出现\n\n如有乱码或顺序错乱，投递前务必修正！');
+  }).catch(()=>{
+    const ta = document.createElement('textarea');
+    ta.value = text; document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); document.body.removeChild(ta);
+    alert('已复制，请粘贴到记事本自检（见弹窗说明）');
+  });
+}
+
+/* ---------- 重置 ---------- */
+function clearSave(){
+  if(!confirm('确定清空本地自动保存的内容，恢复到初始模板？')) return;
+  localStorage.removeItem(SAVE_KEY);
+  curTier = 'mid'; curTpl = 'classic';
+  document.getElementById('tierSel').value = 'mid';
+  document.querySelectorAll('.tplbtn').forEach(b=>b.classList.remove('on'));
+  document.querySelector('.tplbtn[data-tpl="classic"]').classList.add('on');
+  render(false);
+}
+
+/* ============================================================
+   Word 导出（零依赖：构造最小可打开的 .docx XML 包）
+============================================================ */
+function downloadWord(){
+  autoSave();
+  // 提取正文（同PDF：隐藏编辑提示）
+  const el = document.getElementById('resume');
+  const badges = el.querySelectorAll('.tier-badge, .stab-note');
+  const tips = el.querySelectorAll('.edit-tip');
+  badges.forEach(n=>n.style.display='none');
+  tips.forEach(n=>n.style.display='none');
+  // 遍历生成HTML（提取简历结构，尽量贴近原排版）
+  const html = buildWordHtml(el);
+  badges.forEach(n=>n.style.display='');
+  tips.forEach(n=>n.style.display='');
+
+  const contentTypes = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
+<Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
+<Default Extension="xml" ContentType="application/xml"/>
+<Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>
+<Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/>
+</Types>`;
+  const rels = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/>
+</Relationships>`;
+  const docRels = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/>
+</Relationships>`;
+  const styles = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+<w:docDefaults><w:rPrDefault><w:rPr><w:rFonts w:ascii="Calibri" w:eastAsia="微软雅黑"/><w:sz w:val="22"/></w:rPr></w:rPrDefault></w:docDefaults>
+<w:style w:type="paragraph" w:styleId="Title"><w:name w:val="Title"/><w:pPr><w:jc w:val="center"/><w:spacing w:after="120"/></w:pPr><w:rPr><w:b/><w:sz w:val="48"/><w:spacing w:val="20"/></w:rPr></w:style>
+<w:style w:type="paragraph" w:styleId="H2"><w:name w:val="heading 2"/><w:pPr><w:spacing w:before="160" w:after="60"/><w:pBdr><w:bottom w:val="single" w:sz="6" w:space="1" w:color="1F3A5F"/></w:pBdr></w:pPr><w:rPr><w:b/><w:sz w:val="24"/><w:color w:val="1F3A5F"/></w:rPr></w:style>
+<w:style w:type="paragraph" w:styleId="Meta"><w:pPr><w:jc w:val="center"/><w:spacing w:after="60"/></w:pPr><w:rPr><w:sz w:val="20"/><w:color w:val="555555"/></w:rPr></w:style>
+<w:style w:type="paragraph" w:styleId="Bullet"><w:name w:val="List Bullet"/><w:pPr><w:ind w:left="360" w:hanging="240"/><w:spacing w:after="20"/></w:pPr><w:rPr><w:sz w:val="22"/></w:rPr></w:style>
+<w:style w:type="paragraph" w:styleId="Normal"><w:name w:val="Normal"/><w:pPr><w:spacing w:after="40" w:line="300" w:lineRule="auto"/></w:pPr><w:rPr><w:sz w:val="22"/></w:rPr></w:style>
+<w:style w:type="paragraph" w:styleId="Exp"><w:pPr><w:tabs><w:tab w:val="right" w:pos="8500"/></w:tabs><w:spacing w:before="100" w:after="20"/></w:pPr><w:rPr><w:sz w:val="22"/></w:rPr></w:style>
+</w:styles>`;
+
+  // 把HTML结构转成WordprocessingML
+  const documentXml = buildWordDocumentXml(html);
+
+  // 打包成 zip （使用无压缩存储——STORE，不需要zlib也能被Word识别）
+  const files = {
+    '[Content_Types].xml': contentTypes,
+    '_rels/.rels': rels,
+    'word/_rels/document.xml.rels': docRels,
+    'word/styles.xml': styles,
+    'word/document.xml': documentXml
+  };
+  const blob = createZip(files);
+  const name = (getName()||'简历')+'.docx';
+  triggerDownload(blob, name);
+}
+
+function getName(){
+  const el = document.querySelector('[data-key="name"]');
+  if(!el) return '简历';
+  const t = (el.innerText || el.textContent || '').trim();
+  if(!t || t.startsWith('【')) return '简历';
+  return t+'_3-5年简历';
+}
+
+/* ---------- 从简历 DOM 抽取为 Word 结构化段落（稳健版，兼容单/双栏） ---------- */
+function _stripHtml(el){
+  if(!el) return '';
+  const clone = el.cloneNode(true);
+  clone.querySelectorAll('.tier-badge,.edit-tip,.muted,.stab-note').forEach(n=>n.remove());
+  return (clone.innerText||clone.textContent||'').replace(/\s+/g,' ').trim();
+}
+function _text(el){
+  if(!el) return '';
+  return (el.innerText||el.textContent||'').replace(/\s+/g,' ').trim();
+}
+function buildWordHtml(root){
+  const out = [];
+  // 兼容双栏（.side/.main）和单栏（平铺）两种结构：统一取所有可写内容容器
+  const containers = [];
+  const side = root.querySelector('.side');
+  const main = root.querySelector('.main');
+  if(side || main){
+    if(side) containers.push(side);
+    if(main) containers.push(main);
+  }else{
+    containers.push(root);
+  }
+
+  // 统一按文档流顺序遍历，避免 nextElementSibling 跨段/空值 bug
+  const walk = (node)=>{
+    if(!node || node.nodeType!==1) return;
+    const cls = node.classList || [];
+
+    // 头部信息
+    if(node.tagName==='H1'){
+      out.push({type:'title', text:_text(node)}); return;
+    }
+    if(cls.contains('contact')){
+      out.push({type:'meta', text:_text(node)}); return;
+    }
+    if(cls.contains('target')){
+      out.push({type:'meta', text:_stripHtml(node)}); return;
+    }
+
+    // 节标题
+    if(node.tagName==='H2' && cls.contains('sec')===false){
+      // h2 本身不处理，由它的父 .sec 开头处理
+    }
+
+    if(cls.contains('sec')){
+      const h2 = node.querySelector('h2');
+      let title = '';
+      if(h2){
+        const tClone = h2.cloneNode(true);
+        tClone.querySelectorAll('.muted,.edit-tip').forEach(n=>n.remove());
+        title = _text(tClone);
+        out.push({type:'h2', text:title});
+      }
+      // 个人简介
+      const summary = node.querySelector('.summary');
+      if(summary){ out.push({type:'p', text:_text(summary)}); return; }
+      // 顺序遍历 .sec 内的子元素
+      let pendingSub = null;
+      Array.from(node.children).forEach(ch=>{
+        if(ch.classList.contains('exp-head')){
+          const left = ch.querySelector('div:not(.exp-time)');
+          const right = ch.querySelector('.exp-time');
+          out.push({type:'exp', text:_text(left), time:_text(right)});
+          if(pendingSub){
+            out.push({type:'p', text:pendingSub, muted:true});
+            pendingSub = null;
+          }
+        } else if(ch.classList.contains('sub')){
+          pendingSub = _text(ch);
+        } else if(ch.classList.contains('points')){
+          ch.querySelectorAll('.point').forEach(p=>{
+            out.push({type:'bullet', text:_text(p)});
+          });
+        } else if(ch.classList.contains('proj-block')){
+          const meta = ch.querySelector('.proj-meta');
+          if(meta){
+            const left = meta.querySelector('div:not(.exp-time)');
+            const right = meta.querySelector('.exp-time');
+            out.push({type:'exp', text:_text(left), time:_text(right)});
+          }
+          ch.querySelectorAll('.proj-section').forEach(ps=>{
+            out.push({type:'p', text:_text(ps)});
+          });
+        } else if(ch.classList.contains('skill-row')){
+          out.push({type:'p', text:_text(ch)});
+        }
+      });
+      // 证书模块：标题含"证书"时把 .points .point 都作为 bullet
+      if(title.includes('证书')){
+        // 删除最后误作为 p/bullet 追加的内容？不，上面顺序遍历里 points 会被识别；但证书的 points 会被当作普通 points 追加为 bullet 没问题
+      }
+      return;
+    }
+
+    // 递归向下
+    Array.from(node.children).forEach(walk);
+  };
+
+  containers.forEach(walk);
+  return out;
+}
+
+function xmlEscape(s){
+  return String(s).replace(/[<>&'"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;',"'":'&apos;','"':'&quot;'}[c]));
+}
+
+function buildWordDocumentXml(items){
+  let body = '';
+  items.forEach(it=>{
+    const txt = xmlEscape(it.text||'');
+    if(it.type==='title'){
+      body += `<w:p><w:pPr><w:pStyle w:val="Title"/></w:pPr><w:r><w:t>${txt}</w:t></w:r></w:p>`;
+    } else if(it.type==='meta'){
+      body += `<w:p><w:pPr><w:pStyle w:val="Meta"/></w:pPr><w:r><w:t>${txt}</w:t></w:r></w:p>`;
+    } else if(it.type==='h2'){
+      body += `<w:p><w:pPr><w:pStyle w:val="H2"/></w:pPr><w:r><w:t>${txt}</w:t></w:r></w:p>`;
+    } else if(it.type==='exp'){
+      const time = xmlEscape(it.time||'');
+      body += `<w:p><w:pPr><w:pStyle w:val="Exp"/></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>${txt}</w:t></w:r><w:r><w:tab/><w:t>${time}</w:t></w:r></w:p>`;
+    } else if(it.type==='bullet'){
+      body += `<w:p><w:pPr><w:pStyle w:val="Bullet"/></w:pPr><w:r><w:t>· ${txt}</w:t></w:r></w:p>`;
+    } else {
+      body += `<w:p><w:pPr><w:pStyle w:val="Normal"/></w:pPr><w:r><w:t xml:space="preserve">${txt}</w:t></w:r></w:p>`;
+    }
+  });
+  // 页面设置：A4 + 边距
+  body += `<w:sectPr><w:pgSz w:w="11906" w:h="16838"/><w:pgMar w:top="794" w:right="1019" w:bottom="794" w:left="1019" w:header="720" w:footer="720" w:gutter="0"/></w:sectPr>`;
+  return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+<w:body>${body}</w:body>
+</w:document>`;
+}
+
+/* ---------- 最小 ZIP (STORE 不压缩，CRC32+大小写入) ---------- */
+function crc32Table(){
+  const t = new Uint32Array(256);
+  for(let n=0;n<256;n++){
+    let c=n;
+    for(let k=0;k<8;k++) c = (c&1)?(0xEDB88320^(c>>>1)):(c>>>1);
+    t[n]=c>>>0;
+  }
+  return t;
+}
+const CRC_T = crc32Table();
+function crc32(buf){
+  let c=0xFFFFFFFF;
+  for(let i=0;i<buf.length;i++) c = CRC_T[(c^buf[i])&0xFF]^(c>>>8);
+  return (c^0xFFFFFFFF)>>>0;
+}
+function str2u8(s){ return new TextEncoder().encode(s); }
+function u16(n){return [n&0xFF,(n>>>8)&0xFF];}
+function u32(n){return [n&0xFF,(n>>>8)&0xFF,(n>>>16)&0xFF,(n>>>24)&0xFF];}
+function createZip(files){
+  const parts=[], cen=[];
+  let offset=0;
+  Object.keys(files).forEach(name=>{
+    const data = str2u8(files[name]);
+    const crc = crc32(data);
+    const size = data.length;
+    const nameBytes = str2u8(name);
+    // Local file header: 30 bytes fixed + name
+    // sig(4) + ver(2) + flags(2) + method(2) + time(2) + date(2) + crc(4) + csize(4) + usize(4) + namelen(2) + extralen(2) = 30
+    const lh = new Uint8Array(30+nameBytes.length);
+    lh.set([0x50,0x4b,0x03,0x04,...u16(20),...u16(0),...u16(0),...u16(0),...u16(0),...u32(crc),...u32(size),...u32(size),...u16(nameBytes.length),...u16(0)],0);
+    lh.set(nameBytes, 30);
+    parts.push(lh); parts.push(data);
+    // Central directory file header: 46 bytes fixed + name
+    // sig(4)+ver_made(2)+ver_need(2)+flags(2)+method(2)+mtime(2)+mdate(2)
+    // +crc(4)+csize(4)+usize(4)+nlen(2)+elen(2)+clen(2)
+    // +disk(2)+iattr(2)+eattr(4)+offset(4) = 46
+    const ch = new Uint8Array(46+nameBytes.length);
+    const head = [
+      0x50,0x4b,0x01,0x02,                 // sig
+      ...u16(20),                           // version made by
+      ...u16(20),                           // version needed
+      ...u16(0),                            // flags
+      ...u16(0),                            // method (STORE)
+      ...u16(0),                            // last mod time
+      ...u16(0),                            // last mod date
+      ...u32(crc),                          // crc-32
+      ...u32(size),                         // compressed size
+      ...u32(size),                         // uncompressed size
+      ...u16(nameBytes.length),             // file name length
+      ...u16(0),                            // extra field length
+      ...u16(0),                            // file comment length
+      ...u16(0),                            // disk number start
+      ...u16(0),                            // internal file attributes
+      ...u32(0x80200000),                   // external file attributes (archive bit, regular)
+      ...u32(offset),                       // relative offset of local header
+    ];
+    if(head.length !== 46){ console.error('zip CEN header byte count bug:', head.length); }
+    ch.set(head, 0);
+    ch.set(nameBytes, 46);
+    cen.push(ch);
+    offset += lh.length + data.length;
+  });
+  const cenStart = offset;
+  let cenSize = 0;
+  cen.forEach(c=>{ parts.push(c); cenSize += c.length; });
+  // End of central directory: 22 bytes fixed
+  // sig(4)+disk(2)+disk_cd(2)+entries_disk(2)+entries_total(2)+cen_size(4)+cen_offset(4)+commentlen(2)=22
+  const total = Object.keys(files).length;
+  const end = new Uint8Array(22);
+  end.set([0x50,0x4b,0x05,0x06,...u16(0),...u16(0),...u16(total),...u16(total),...u32(cenSize),...u32(cenStart),...u16(0)],0);
+  parts.push(end);
+  let totalLen=0; parts.forEach(p=>totalLen+=p.length);
+  const out = new Uint8Array(totalLen);
+  let p=0; parts.forEach(x=>{ out.set(x,p); p+=x.length; });
+  return new Blob([out], {type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'});
+}
+function triggerDownload(blob, name){
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = name;
+  document.body.appendChild(a); a.click();
+  setTimeout(()=>{URL.revokeObjectURL(a.href); document.body.removeChild(a);}, 200);
+}
+
+/* ---------- 首次渲染 ---------- */
+render(false);
+</script>
+</body>
+</html>
+<!--21486241872395614730100115--><!--21620878512573747210100115--><!--21757870182573747210100115--><!--21902026352573747210100115--><!--22031638662395614730100115--><!--22237942872395614730100115--><!--33891716572573747210100115--><!--34248320152395614730100115--><!--34489614022573747210100115--><!--00006083962395614730100116--><!--04522205812573747210100116--><!--05393149802395614730100116--><!--05609728672395614730100116--><!--06235302802395614730100116--><!--06862468422395614730100116--><!--07358781502395614730100116-->
